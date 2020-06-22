@@ -1,0 +1,21 @@
+{
+  "name": "femtocolor",
+  "version": "1.0.0",
+  "description": "Tiny terminal color util",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "FORCE_COLOR=true ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "pearofducks/femtocolor"
+  },
+  "author": "Dave Honneffer <pearofducks@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^3.9.0"
+  }
+}
