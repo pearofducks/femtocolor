@@ -1,6 +1,6 @@
 {
   "name": "femtocolor",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Tiny terminal color util",
   "main": "index.js",
   "type": "module",
