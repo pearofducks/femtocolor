@@ -2,11 +2,11 @@
   "name": "femtocolor",
   "version": "2.0.0",
   "description": "Tiny terminal color util",
-  "main": "index.js",
+  "main": "dist/index.cjs",
   "type": "module",
   "exports": {
-    "require": "./dist/index.cjs.js",
-    "import": "./dist/index.esm.js"
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.esm"
   },
   "files": [
     "dist"
