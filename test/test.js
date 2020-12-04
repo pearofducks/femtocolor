@@ -1,5 +1,5 @@
-const c = require('..')
-const test = require('ava')
+import * as c from '../index.js'
+import test from 'ava'
 
 const complexNestedCheck = () => c.bold(`BOLD ${c.red(`RED ${c.dim("DIM")} RED`)} BOLD`)
 const complexNestedResult = `\x1b[1mBOLD \x1b[31mRED \x1b[2mDIM\x1b[22m\x1b[1m RED\x1b[39m BOLD\x1b[22m`

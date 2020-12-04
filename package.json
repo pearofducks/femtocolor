@@ -3,11 +3,20 @@
   "version": "1.0.0",
   "description": "Tiny terminal color util",
   "main": "index.js",
+  "type": "module",
+  "exports": {
+    "require": "./dist/index.cjs.js",
+    "import": "./dist/index.esm.js"
+  },
   "files": [
-    "index.js"
+    "dist"
   ],
   "scripts": {
-    "test": "FORCE_COLOR=true ava"
+    "test": "FORCE_COLOR=true ava",
+    "build": "rollup -c",
+    "preversion": "npm run build",
+    "version": "npm publish",
+    "postversion": "git push --follow-tags"
   },
   "repository": {
     "type": "git",
@@ -16,6 +25,7 @@
   "author": "Dave Honneffer <pearofducks@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^3.9.0"
+    "ava": "^3.9.0",
+    "rollup": "^2.34.1"
   }
 }
