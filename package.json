@@ -1,6 +1,6 @@
 {
   "name": "femtocolor",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Tiny terminal color util",
   "main": "dist/index.cjs",
   "type": "module",
