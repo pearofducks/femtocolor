@@ -1,10 +1,15 @@
-let enabled =
-  !("NO_COLOR" in process.env) &&
-  ("FORCE_COLOR" in process.env ||
-    (process.stdout != null &&
-      process.stdout.isTTY &&
-      process.env.TERM &&
-      process.env.TERM !== "dumb"))
+import * as tty from 'tty'
+
+const env = process.env || {}
+const argv = process.argv || []
+
+const isDisabled = "NO_COLOR" in env || argv.includes("--no-color")
+const isForced = "FORCE_COLOR" in env || argv.includes("--color")
+const isTTY = tty.isatty && tty.isatty(1)
+const isSaneTerm = (process.stdout != null && isTTY && process.env.TERM && process.env.TERM !== "dumb")
+const isCI = "CI" in env && ("GITHUB_ACTIONS" in env || "GITLAB_CI" in env || "CIRCLECI" in env)
+
+let enabled = !isDisabled && (isForced || isSaneTerm || isCI)
 
 const raw = (open, close, searchRegex, replaceValue) => (s) => enabled
   ? open +
